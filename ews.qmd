@@ -1,11 +1,14 @@
 ---
 title: "EWS"
-author: "Sean + Lisa"
+author: "Sean Westwood"
 format: revealjs
 ---
 
 ```{r, include = FALSE}
-knitr::opts_chunk$set(error = TRUE)
+knitr::opts_chunk$set(error = TRUE,
+                      echo = TRUE,
+                      message = FALSE,
+                      eval = FALSE)
 # remember to set evel = FALSE on code chunks that I don't want code to run
 # this may make more sense than error depending if we want error message
 ```
@@ -32,64 +35,50 @@ knitr::opts_chunk$set(error = TRUE)
 ```
 
 
-## Input {auto-animate=true}
+## Input 
 
 We use the function function to specify our inputs 
 
 ``` {r}
-function()
+function(`input`)
 ```
 
 
-## Process {auto-animate=true}
+## Process 
 
 ```{r}
-function(){
+function(`input`){
   # inside the curly brackets goes the process
 }
 ```
 
-## Output {auto-animate=true}
+## Output 
 
 ```{r}
-function(){
-  # inside the curly brackets goes the process
-  return() # the outcome of your process can go in here 
-}
-```
-
-## Example: That's Sum Function {auto-animate=true}
-
-<!--
-If cutting down for time/efficiency, this can be chopped
-- key point - 
-think about the KEY PRIORITIES of the talk 
-- what are the essential take-aways
-- what things might facilitate this
-- what things might muddy the waters 
-- is a sum function necessarily moving us towards the goal?
--->
-
-
-## Step 2: I Make a Mean Function {auto-animate=true}
-
-The first key component of a standard error function is the mean. This is essential for calculating the variance, which is required for the SEM.
-
-<!-- I think I want to have the equation on screen too (can use latex) -->
-
-```{r}
-mean_function <- function(){
-  
-  
+function(`input`){
+  `process` # inside the curly brackets goes the process
+  return(`output`) # the outcome of your process can go in here 
 }
 ```
 
 
-## Step 2: I Make a Mean Function {auto-animate=true}
+## Step 1: I Make a Mean Function 
+::: {style="font-size: .8em"}
+The first key component of a standard error function is the mean. This is essential for calculating the variance, which is required for the SEM. The mean is a reflection of the 'centre' of a set of numbers, whilst being sensitive to extreme values within the set (unlike the median). 
+:::
+<!-- Insert Mean Figure -->
 
-The first key component of a standard error function is the mean. This is essential for calculating the variance, which is required for the SEM.
+::: {style="font-size: .8em"}
+The mean is calculated by adding together all the values in the set, and dividing the total by the number of values:
+:::
+<!-- Insert Latex equation -->
 
-Input: a vector of numeric values 
+
+
+## Step 1: I Make a Mean Function 
+::: {style="font-size: .8em"}
+Input: a vector of numeric values (`x`)
+:::
 
 ```{r}
 mean_function <- function(x){
@@ -102,13 +91,15 @@ mean_function <- function(x){
 }
 ```
 
-## Step 2: I Make a Mean Function {auto-animate=true}
-
-The first key component of a standard error function is the mean. This is essential for calculating the variance, which is required for the SEM.
-
+## Step 1: I Make a Mean Function 
+::: {style="font-size: .8em"} 
 Input: a vector of numeric values (`x`)
+
 Process: 
-  - Step 1: Sum all the values together
+
+  - Step 1: Add up all the values within `x` 
+
+:::
 
 ```{r}
 mean_function <- function(x){
@@ -121,15 +112,16 @@ mean_function <- function(x){
 }
 ```
 
-## Step 2: I Make a Mean Function {auto-animate=true}
-
-The first key component of a standard error function is the mean. This is essential for calculating the variance, which is required for the SEM.
-
+## Step 1: I Make a Mean Function 
+::: {style="font-size: .8em"}
 Input: a vector of numeric values (`x`)
-Process: 
-  - Step 1: Sum all the values together
-  - Step 2: Find the number of values
 
+Process: 
+
+  - Step 1: Add up all the values within `x` 
+  - Step 2: Find the number of values within `x` 
+
+:::
 ```{r}
 mean_function <- function(x){
   
@@ -141,66 +133,70 @@ mean_function <- function(x){
 }
 ```
 
-## Step 2: I Make a Mean Function {auto-animate=true}
-
-The first key component of a standard error function is the mean. This is essential for calculating the variance, which is required for the SEM.
-
+## Step 1: I Make a Mean Function 
+::: {style="font-size: .8em"}
 Input: a vector of numeric values (`x`)
-Process: 
-  - Step 1: Sum all the values together
-  - Step 2: Find the number of values
-  - Step 3: Divide the sum of values by the number of values
 
+Process: 
+
+  - Step 1: Add up all the values within `x` 
+  - Step 2: Find the number of values within `x` 
+  - Step 3: Divide the sum of values by the number of values
+  
+:::
 ```{r}
 mean_function <- function(x){
   
   mean_sum    <- sum(x)
   mean_n      <- length(x)
-  mean_divide <- mean-sum/mean_n
+  mean_output <- mean-sum/mean_n
   
   
 }
 ```
 
-## Step 2: I Make a Mean Function {auto-animate=true}
-
-The first key component of a standard error function is the mean. This is essential for calculating the variance, which is required for the SEM.
-
+## Step 1: I Make a Mean Function 
+::: {style="font-size: .8em"}
 Input: a vector of numeric values (`x`)
+
 Process: 
-  - Step 1: Add up all the values within x 
-  - Step 2: Find the number of values within x
+
+  - Step 1: Add up all the values within `x` 
+  - Step 2: Find the number of values within `x`
   - Step 3: Divide the sum of values by the number of values
+  
 Output: return the result of the division in step 3
-
-```{r}
+:::
+```{r, eval=TRUE}
 mean_function <- function(x){
   
   mean_sum    <- sum(x)
   mean_n      <- length(x)
-  mean_divide <- mean_sum/mean_n
+  mean_output <- mean_sum/mean_n
   
-  return(mean_divide)
+  return(mean_output)
 }
 ```
 
-## Step 2: Means Testing {auto-animate=true}
-
+## Step 1: Mean Testing 
+::: {style="font-size: .8em"}
 Now that we have made our function, we can test it by comparing the output it gives us to the regular old `mean()` function in base R! 
 
 Let's simulate some random values to test our function with: 
 
-```{r}
+:::
+```{r, eval=TRUE}
 test_data = rnorm(n = 10, mean = 0, sd = 1)
 test_data
 ```
-## Step 2: Means Testing {auto-animate=true}
-
+## Step 1: Mean Testing 
+::: {style="font-size: .8em"}
 Now that we have made our function, we can test it by comparing the output it gives us to the regular old `mean()` function in base R! 
 
 Now let's use `test_data` as the input to our function and compare the output with `mean`: 
 
-```{r}
+:::
+```{r, eval=TRUE}
 # print the mean that our function calculates
 mean_function(test_data)
 # print the mean that the base R function calculates
@@ -210,55 +206,298 @@ mean_function(test_data) == mean(test_data)
 ```
 
 
-## Step 3: Variance is the Spice of Life {auto-animate=true}
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
+One of the two key components of the SEM is the variance of a sample. This reflects the spread of data in our sample, which can be visualised as the width of a distribution: 
 
-One of the two key components of the SEM is the variance of a sample. Our mean function will come in very useful when we need to calculate the variance. Let's look at the variance formula:  
-
-<!-- insert latex equation -->
-
-This reflects the spread of data in our sample, which can be visualised as the width of a distribution: 
-
+:::
 ```{r}
 # plot the 3 variance curves from my other script
 ```
+::: {style="font-size: .8em"}
+Our mean function will come in very useful when we need to calculate the variance. This is because the variance formula requires us to subtract the mean from each value in our set, square the result, add them all together, and finally divide by the number of values minus 1:
+:::
+<!-- insert latex equation -->
 
-
-## Step 3: Variance is the Spice of Life {auto-animate=true}
-
-So how can we make a function that calculates the variance? We can start by working out our inputs, process and output.
-
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
 Input: A vector of numeric values (`x`) 
 
+:::
 ```{r}
 var_function <- function(x){
+  
+  
+  
+  
+  
   
   
 }
 ```
 
-## Step 3: Variance is the Spice of Life {auto-animate=true}
-
-So how can we make a function that calculates the variance? We can start by working out our inputs, process and output.
-
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
 Input: A vector of numeric values (`x`) 
-Process:
-  - Step 1: calculate the mean of `x`
 
+Process:
+
+  - Step 1: calculate the mean of `x` using our `mean_function()`
+
+:::
 ```{r}
 var_function <- function(x){
   
   var_mean <- mean_function(x)
   
+  
+  
+  
+  
+  
+}
+```
+
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
+Input: A vector of numeric values (`x`) 
+
+Process:
+
+  - Step 1: calculate the mean of `x`
+  - Step 2: calculate the top part (numerator) of the formula
+  
+      1. subtract the mean from each value of x
+
+:::
+```{r}
+var_function <- function(x){
+  
+  var_mean <- mean_function(x)
+  numerator <- sapply(x,`-`,var_mean)
+  
+  
+  
+  
+}
+```
+
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
+Input: A vector of numeric values (`x`) 
+
+Process:
+
+  - Step 1: calculate the mean of `x`
+  - Step 2: calculate the top part (numerator) of the formula
+  
+      1. subtract the mean from each value of x
+      2. square each of the resulting values
+
+:::
+```{r}
+var_function <- function(x){
+  
+  var_mean <- mean_function(x)
+  numerator <- sapply(x,`-`,var_mean)^2
+  
+  
+  
+  
+}
+```
+
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
+Input: A vector of numeric values (`x`) 
+
+Process:
+
+  - Step 1: calculate the mean of `x`
+  - Step 2: calculate the top part (numerator) of the formula
+  
+      1. subtract the mean from each value of x
+      2. square each of the resulting values
+      3. sum all of the squared values together
+
+:::
+```{r}
+var_function <- function(x){
+  
+  var_mean <- mean_function(x)
+  numerator <- sapply(x,`-`,var_mean)^2 |> sum()
+  
+  
+  
+  
+}
+```
+
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
+Input: A vector of numeric values (`x`) 
+
+Process:
+
+  - Step 1: calculate the mean of `x`
+  - Step 2: calculate the top part (numerator) of the formula
+  
+      1. subtract the mean from each value of x
+      2. square each of the resulting values
+      3. sum all of the squared values together
+      
+  - Step 3: calculate the bottom part (denominator) of the formula
+
+:::
+```{r}
+var_function <- function(x){
+  
+  var_mean <- mean_function(x)
+  numerator <- sapply(x,`-`,var_mean)^2 |> sum()
+  denominator <- length(x) - 1
+  
+  
+  
+}
+```
+
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
+Input: A vector of numeric values (`x`) 
+
+Process:
+
+  - Step 1: calculate the mean of `x`
+  - Step 2: calculate the top part (numerator) of the formula
+  
+      1. subtract the mean from each value of x
+      2. square each of the resulting values
+      3. sum all of the squared values together
+      
+  - Step 3: calculate the bottom part (denominator) of the formula
+  - Step 4: divide the numerator by the denominator
+
+:::
+```{r}
+var_function <- function(x){
+  
+  var_mean <- mean_function(x)
+  numerator <- sapply(x,`-`,var_mean)^2 |> sum()
+  denominator <- length(x) - 1
+  var_output <- numerator/denominator
+
+  
+}
+```
+
+## Step 2: Variance is the Spice of Life 
+::: {style="font-size: .8em"}
+Input: A vector of numeric values (`x`)
+
+Process:
+
+  - Step 1: calculate the mean of `x`
+  - Step 2: calculate the top part (numerator) of the formula
+  
+      1. subtract the mean from each value of x
+      2. square each of the resulting values
+      3. sum all of the squared values together
+      
+  - Step 3: calculate the bottom part (denominator) of the formula
+  - Step 4: divide the numerator by the denominator
+  
+Output: return the output of step 4 in the process
+
+:::
+```{r, eval=TRUE}
+var_function <- function(x){
+  
+  var_mean <- mean_function(x)
+  numerator <- sapply(x,`-`,var_mean)^2 |> sum()
+  denominator <- length(x) - 1
+  var_output <- numerator/denominator
+  
+  return(var_output)
+}
+```
+
+## Step 2: Variance Testing 
+::: {style="font-size: .8em"}
+Remember our `test_data` from earlier?
+:::
+```{r, eval=TRUE}
+test_data
+```
+
+::: {style="font-size: .8em"}
+Let's see if we can successfully apply our variance function to this data: 
+:::
+```{r, eval=TRUE}
+# print the mean that our function calculates
+var_function(test_data)
+# print the mean that the base R function calculates
+var(test_data)
+# return TRUE if the two calculated means are equivalent
+var_function(test_data) == var(test_data)
+```
+
+## Step 3: Making a Standard Error (but in a good way)
+::: {style="font-size: .8em"}
+The Standard Error of the Mean is a statistical concept that reflects the **standard deviation of sample means we would get from sampling the same population over and over, for a given sample size.** It gives us an idea of how close an estimate our sample mean is of the true population mean, and is the basis for other useful stats like confidence intervals. 
+
+The calculation for this is actually very simple:
+:::
+<!-- insert latex equation -->
+
+::: {style="font-size: .8em"}
+Where the numerator is the standard deviation of the sample, i.e. the square root of the variance.
+:::
+
+## Step 3: Making a Standard Error (but in a good way)
+::: {style="font-size: .8em"}
+
+Input: A vector of numeric values (`x`) 
+
+Process:
+
+  - Step 1: calculate the mean of `x`
+  - Step 2: calculate the top part (numerator) of the formula
+  
+      1. subtract the mean from each value of x
+      2. square each of the resulting values
+      3. sum all of the squared values together
+      
+  - Step 3: calculate the bottom part (denominator) of the formula
+  - Step 4: divide the numerator by the denominator
+Output: return the output of step 4 in the process
+
+:::
+```{r, eval=TRUE}
+sem_function <- function(x){
+  
+  sem_var <- var_function(x)
+  numerator <- sqrt(sem_var)
+  denominator <- sqrt(length(x))
+  sem_output <- numerator/denominator
+  
+  return(sem_output)
+}
+```
+
+```{r}
+sem_function_short <- function(x){
+  var_function(x)^.5 / length(x)^.5
 }
 ```
 
 
 
-
-
-
-## Step 4: putting together (+nesting)
-
 ## Taking it further
 - more complex concepts + functions
-- mapping, looping, possibility to make things more complex (but not in this talk) 
+- mapping, looping, possibility to make things more complex (but not in this talk)
+
+
+Notes 
+- one thing that will come up a lot is people won't always use as intended
+- ie ERRORS
+- Tobi will now show how we can anticipate common errors and help our users understand where and why things are breaking 
