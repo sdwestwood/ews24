@@ -1,0 +1,319 @@
+---
+title: "Errors - help!"
+subtitle: "Using error messages to teach programming"
+author: "Tobias Thejll-Madsen"
+execute: 
+  echo: true
+format: revealjs
+editor: visual
+---
+
+# Errors - Help!
+
+## A familiar scenario {auto-animate="true"}
+
+You go to check-in on a student and see the following:
+
+## A familiar scenario {auto-animate="true"}
+
+You go to check-in on a student and see the following:
+
+```{r eval=FALSE}
+# simulate data
+d <- tibble( 
+  "Group" = rep(c("G1", "G2"), each = 10), 
+  "ReactionT" = rnorm(20, 500, 150)) 
+
+head(d, 2) # see first two rows
+```
+
+[Error in tibble(Group = rep(c("G1", "G2"), each = 10), ReactionT = rnorm(20, : could not find function "tibble"]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## A familiar scenario {auto-animate="true"}
+
+We realise that they did not load 'tidyverse', so
+
+```{r eval=TRUE}
+library(tidyverse)
+
+# simulate data
+d <- tibble( 
+  "Group" = rep(c("G1", "G2"), each = 10), 
+  "ReactionT" = rnorm(20, 500, 150)) 
+
+head(d, 2) # see first two rows
+```
+
+## Programming errors {auto-annimate="true"}
+
+## Programming errors {auto-annimate="true"}
+
+-   Student programming errors comes two main types (Becker et al 2019):
+    1.  Language specification errors (comes with an error message)
+    2.  Program specification errors (program runs, but doesn't do as intended)
+
+## Programming errors {auto-annimate="true"}
+
+-   Student programming errors comes two main types (Becker et al 2019):
+    1.  [Language specification errors]{style="color: red"} (comes with an error message)
+    2.  Program specification errors (program runs, but doesn't do as intended)
+-   Both are important when debugging code, but an immediate hindrance is in [language specification errors]{style="color: red"}
+
+## But why focus on errors? {auto-annimate="true"}
+
+::: incremental
+-   Using errors in teaching has some evidence that is increase student programming ability and self-efficacy (Hoffman & Elmi, 2021; Keohler, 2020)
+-   Effectively debugging code can allow students to progress independently
+-   An excellent framing device for fostering students as self-regulated learners (for self-regulated learning, see e.g., Zimmerman, 2002)
+:::
+
+## Errors for non-programmers {auto-annimate="true"}
+
+::: incremental
+-   Students are used to high-stakes assessments (not used to 'move fast and break things'-mentality)
+
+-   [Red is scary!]{style="color: red"}
+
+-   Language is often convoluted and technical
+
+-   We need to actively help create the right relationship with errors
+:::
+
+## Goal {auto-annimate="true"}
+
+::: incremental
+-   First time students engage with errors it should be taught and not by chance
+-   We want the first thought when seeing an error to be:
+    -   "Great, that's information about how I can do this cool thing"
+    -   "Oh no, I've done something wrong - maybe coding is not for me"
+:::
+
+## How can we meaningfully use errors? {auto-annimate="true"}
+
+::: incremental
+-   Make errors an explicit part of your teaching and not something that just happens
+    -   Introduce errors just like you introduce a function
+    -   Error-full live coding
+    -   Fix errors to get code to run
+    -   "My favourite error"
+    -   Write functions with error handling
+:::
+
+## Introduce errors just like you introduce a function {auto-annimate="true"}
+
+```{r echo=FALSE}
+d <- d %>%
+  mutate(Group = as.factor(Group))
+
+```
+
+## Introduce errors just like you introduce a function {auto-annimate="true"}
+
+-   So just as with introducing functions and it's output
+
+```{r eval=TRUE}
+t.test(formula = ReactionT ~ Group, 
+       data = d, paired = FALSE)
+```
+
+## Introduce errors just like you introduce a function {auto-annimate="true"}
+
+-   We also want to spend time on
+
+```{r eval=FALSE}
+t.test(formula = Group ~ ReactionT, 
+       data = d, paired = FALSE)
+```
+
+[Error in t.test.formula(formula = Group \~ ReactionT, data = d, paired = FALSE) : grouping factor must have exactly 2 levels]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Error-full live coding {auto-annimate="true"}
+
+::: incremental
+-   Pre-plan helpful errors for live coding
+-   For instance:
+    -   syntax/spelling errors you can easily fix
+:::
+
+## Error-full live coding {auto-annimate="true"}
+
+-   Pre-plan helpful errors for live coding
+-   For instance:
+    -   syntax/spelling errors you can easily fix
+
+::: {style="position: fixed; bottom: 1em"}
+```{r eval=FALSE}
+librarry(tidyverse)
+```
+
+[Error in librarry(tidyverse) : could not find function "librarry"]{style="color: red; font-size: 60%; font-family: Courier New"}
+:::
+
+## Error-full live coding {auto-annimate="true"}
+
+-   Pre-plan helpful errors for live coding
+-   For instance:
+    -   syntax/spelling errors you can easily fix
+    -   error that requires you to look at the `?help` (documentation)
+
+::: {style="position: fixed; bottom: 1em"}
+```{r eval=FALSE}
+rnorm(mean = 0, sd = 1)
+```
+
+[Error in rnorm(mean = 0, sd = 1) : argument "n" missing, with no default]{style="color: red; font-size: 60%; font-family: Courier New"}
+:::
+
+## Error-full live coding {auto-annimate="true"}
+
+-   Pre-plan helpful errors for live coding
+
+-   For instance:
+
+    -   syntax/spelling errors you can easily fix
+    -   error that requires you to look at the `?help` (documentation)
+    -   error that requires you to google (exact answer)
+
+    ::: incremental
+    -   error that requires you to google (adaption required)
+    :::
+
+## Fix errors to get code to run {auto-annimate="true"}
+
+-   Write code with error and have student fix them:
+
+## Fix errors to get code to run {auto-annimate="true"}
+
+-   Write code with error and have student fix them:
+
+```{r eval=FALSE}
+library(tidyverse)
+
+# simulate data
+d <- tibble( 
+  "Group" = rep(c("G1", "G2"), each = 10), 
+  "ReactionT" = rnorm(20, 500, 150)) %>
+  mutate("Group" = as.factor(Group))
+  
+head(d, 2) # see first two rows
+```
+
+[Error: unexpected input in: " "Group" = rep(c("G1", "G2"), each = 10), "ReactionT" = rnorm(20, 500, 150)) %\>"]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## "My favourite error" {auto-annimate="true"}
+
+::: incremental
+-   But we can only think of so many errors...
+
+-   ... so get help from your students!
+
+-   ***"My favourite error"***-activity:
+
+    -   students submit errors they come across during their coding
+    -   you review before class
+    -   choose a particularly interesting error and go through it in class
+
+-   This can help form foundation for a **community error library**
+:::
+
+## Write functions with error handling {auto-annimate="true"}
+
+-   Error messages help us think about how programming works, and what function calls do
+
+## Write functions with error handling {auto-annimate="true"}
+
+-   Error messages help us think about how programming works, and what function calls do
+
+So when trying the off-the-shelf `mean()`-function:
+
+```{r eval=FALSE}
+test_chr <- c(1,2, "hello")
+
+mean(test_chr)
+```
+
+[Warning: argument is not numeric or logical: returning NA]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+Let's compare to our function from earlier:
+
+```{r eval=FALSE}
+mean_function <- function(x){
+  mean_sum    <- sum(x)
+  mean_n      <- length(x)
+  mean_output <- mean_sum/mean_n
+  
+  return(mean_output)}
+
+test_chr <- c(1,2, "hello")
+
+mean_function(test_chr)
+```
+
+[Error in sum(x) : invalid 'type' (character) of argument]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+Let's write an error message:
+
+```{r eval=TRUE}
+mean_function <- function(x){
+  
+  if(!is.numeric(x)){
+    stop("mean_function must take an array of numbers")}
+  
+  mean_sum    <- sum(x)
+  mean_n      <- length(x)
+  mean_output <- mean_sum/mean_n
+  
+  return(mean_output)}
+```
+
+## Write functions with error handling {auto-annimate="true"}
+
+Now let's test it:
+
+## Write functions with error handling {auto-annimate="true"}
+
+Now let's test it:
+
+```{r eval = FALSE}
+test_num <- c(1,2,3)
+
+mean_function(test_num)
+```
+
+[`[1] 2`]{style="font-size: 60%"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+Now let's test it:
+
+```{r eval = FALSE}
+test_num <- c(1,2,3)
+
+mean_function(test_num)
+```
+
+[`[1] 2`]{style="font-size: 60%"}
+
+```{r eval = FALSE}
+test_chr <- c(1,2,"hello")
+
+mean_function(test_chr)
+```
+
+[Error in mean_function(test_chr) : mean_function must take an array of numbers]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+-   Writing error messages forces students to think about functions as a series of steps each with its own requirements
+-   Demystify why error messsages are there and helps open up the way we think about functions
+
+## Takeaway
+
+::: incremental
+-   Errors will be a part of a student's coding journey, so we need to think about how we help students make the most of them
+-   *Reflection:* What is one way you could incorporate errors in your teaching?
+:::

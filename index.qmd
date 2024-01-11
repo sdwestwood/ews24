@@ -1,0 +1,1110 @@
+---
+title: "PsyTeachR<br><smaller>Teaching case studies from Glasgow</smaller>"
+subtitle: "[psyteachr.github.io/ews24](https://psyteachr.github.io/ews24/)"
+author: "Sean Westwood, Tobias Thejll-Madsen & Lisa DeBruine"
+format: 
+  revealjs:
+    logo: images/hex/psyteachr.png
+    theme: [dark, style.scss]
+    transition: none
+    transition-speed: fast
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(error = TRUE,
+                      echo = TRUE,
+                      message = FALSE,
+                      eval = FALSE)
+
+# remember to set eval = FALSE on code chunks that I don't want code to run
+# this may make more sense than error depending if we want error message
+```
+
+# Overview
+
+::: {.people layout-ncol=3}
+![Demystifying Functions](images/sean.jpg)
+
+![Errors<br>Help!](images/tobi.jpg)
+
+![PsyTeachR Resources](images/lisa.jpg)
+:::
+
+# Demystifying Functions
+
+## Why Demystification?
+
+::: {.incremental}
+-   Programming as a beginner is mysterious and scary
+-   Things almost seem to work by magic
+-   How can we fix something magical when it breaks??
+:::
+
+::: {.fragment .absolute left=250 width=500 height=300}
+![](images/fantasia.jpg)
+:::
+
+## Why Demystification?
+
+::: {.incremental}
+-   Similar panic can be induced by stats formula
+-   Mapping intuition onto an equation is not easy
+-   What if we can find a common solution?
+:::
+
+::: {.fragment .absolute left=250 width=700 height=400}
+![](images/oneplusone.png)
+:::
+
+## The Goal
+
+::: {.incremental}
+-   Crack open the black box of functions in coding
+-   Systematically defang scary formulas
+-   Instill a sense of confidence and independence
+:::
+
+::: {.fragment .absolute left=250 width=500 height=300}
+![](images/fantasia2.jpg)
+:::
+
+## The `function()` Function {auto-animate="true"}
+
+::: fragment
+-   **Input**: We use the function function to specify our inputs
+:::
+
+::: fragment
+```{r}
+function(`input`)
+```
+:::
+
+::: fragment
+-   **Process**: We put the process inside the curly brackets `{}`
+:::
+
+::: fragment
+```{r}
+function(`input`){
+  # inside the curly brackets goes the process
+}
+```
+:::
+
+::: fragment
+-   **Output**: We specify the output using `return()`
+:::
+
+::: fragment
+```{r}
+function(`input`){
+  `process` # inside the curly brackets goes the process
+  return(`output`) # the outcome of the process goes here
+}
+```
+:::
+
+## Step 1: I Make a Mean Function
+
+::: incremental
+-   We need a non-intimidating example to ease into things
+-   The mean is a simple & familiar statistical concept
+-   An ideal starting point for demystification!!
+:::
+
+::: {.fragment .absolute right=100 width=400 height=400}
+![](images/mean.png)
+:::
+
+::: {.fragment .absolute left=150 bottom=150}
+$$
+\bar{x} = \frac{\sum x}{n} 
+$$
+:::
+
+## Mean Function: Input {auto-animate="true"}
+
+::: fragment
+A vector of numeric values (`x`)
+:::
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+mean_function <- function(x){
+  
+  
+  
+  
+  
+  
+}
+```
+:::
+
+::: {.fragment .absolute right=0 bottom=100}
+$$
+\bar{x} = \frac
+{\sum \color{red}{x}}
+{n} 
+$$
+:::
+
+## Mean Function: Process {auto-animate="true"}
+
+1. Add up all the values within `x` 
+
+::: {.absolute top=400 left=0 width=700 height="300"}
+```{r}
+mean_function <- function(x){
+  
+  numer  <- sum(x)
+  
+  
+  
+  
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\bar{x} = \frac
+{\color{red}{\sum x}}
+{n} 
+$$
+:::
+
+## Mean Function: Process {auto-animate=true}
+
+1. Add up all the values within `x` 
+2. Find the number of values within `x` 
+
+::: {.absolute top=400 left=0 width=700 height="300"}
+```{r}
+mean_function <- function(x){
+  
+  numer  <- sum(x)
+  denom  <- length(x)
+  
+  
+  
+}
+```
+:::
+::: {.absolute right=0 bottom=100}
+$$
+\bar{x} = \frac
+{\sum x}
+{\color{red}{n}} 
+$$
+:::
+
+## Mean Function: Process {auto-animate=true}
+
+1. Add up all the values within `x` 
+2. Find the number of values within `x` 
+3. Divide the sum of values by the number of values
+
+::: {.absolute top=400 left=0 width=700 height="300"}
+```{r}
+mean_function <- function(x){
+  
+  numer  <- sum(x)
+  denom  <- length(x)
+  output <- numer/denom
+  
+  
+}
+```
+::: 
+::: {.absolute right=0 bottom=100}
+$$
+\bar{x} = \color{red}{\frac
+{\sum x}
+{n}} 
+$$
+:::
+
+## Mean Function: Output {auto-animate=true}
+
+Return the value contained in `output`
+
+::: {.absolute top=400 left=0 width=700 height="300"}
+```{r, eval=TRUE}
+mean_function <- function(x){
+  
+  numer  <- sum(x)
+  denom  <- length(x)
+  output <- numer/denom
+  
+  return(output)
+}
+```
+:::
+::: {.absolute right=0 bottom=100}
+$$
+\color{red}{\bar{x}} = \frac
+{\sum x}
+{n}
+$$
+:::
+
+## Mean Function: Testing
+
+Now that we have made our function, we can test it by comparing the output it gives us to the regular old `mean()` function in base R!
+
+::: {.fragment .absolute bottom=300}
+Let's simulate some random values to test our function with:
+:::
+::: {.fragment .absolute bottom=100}
+```{r, eval=TRUE}
+test_data <- rnorm(n = 10, mean = 0, sd = 1)
+test_data
+```
+:::
+
+## Mean Function: Testing
+::: {.fragment}
+Let's see how our function compares to `mean()` in base R
+:::
+::: {.fragment}
+We can use `test_data` as a test case:
+:::
+::: {.fragment}
+```{r, eval=TRUE}
+# print the mean that our function calculates
+mean_function(test_data)
+```
+:::
+::: {.fragment}
+```{r, eval=TRUE}
+# print the mean that the base R function calculates
+mean(test_data)
+
+```
+:::
+:::{.fragment}
+```{r, eval=FALSE}
+# return TRUE if the two  means are equivalent
+mean_function(test_data) == mean(test_data)
+```
+```{r, eval=TRUE, echo=FALSE}
+# return TRUE if the two means are equivalent
+round(mean_function(test_data),5) == round(mean(test_data),5)
+```
+:::
+:::{.fragment .absolute bottom=25}
+**It wasn't magic after all!!**
+:::
+
+## Step 2: Variance is the Spice of Life 
+
+::: {.incremental}
+- Now we have dipped our toe in, let's up the complexity
+- Variance is a little trickier, but not totally alien
+- We can use our new mean function too!
+:::
+::: {.fragment .absolute right=50 width=400 height=400}
+![](images/var.png)
+:::
+
+::: {.fragment .absolute left=150 bottom=150}
+$$\sigma^2 = \frac{\sum(x - \bar{x})^2}{n-1}$$
+:::
+
+## Variance Function: Input {auto-animate=true}
+::: fragment
+A vector of numeric values (`x`)
+:::
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+var_function <- function(x){
+  
+  
+  
+  
+  
+  
+  
+}
+```
+::: 
+
+::: {.fragment .absolute right=0 bottom=100}
+$$
+\sigma^2 = \frac
+{\sum(\color{red}{x} - \bar{x})^2}
+{n-1}
+$$
+:::
+
+## Variance Function: Process {auto-animate=true}
+
+1. Calculate the mean of `x` using our `mean_function()`
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+var_function <- function(x){
+  
+  av     <- mean_function(x)
+  
+  
+  
+  
+  
+}
+```
+:::
+
+::: {.absolute right=0 bottom=100}
+$$
+\sigma^2 = \frac
+{\sum(x - \color{red}{\bar{x}})^2}
+{n-1}
+$$
+:::
+
+## Variance Function: Process {auto-animate=true}
+
+2. Calculate the top part (numerator) of the formula
+
+    1.  subtract the mean from each value of x 
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+var_function <- function(x){
+  
+  av     <- mean_function(x)
+  numer  <- sapply(x,`-`,av)
+  
+  
+  
+  
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\sigma^2 = \frac
+{\sum(x \color{red}{-} \bar{x})^2}
+{n-1}
+$$
+:::
+
+## Variance Function: Process {auto-animate=true}
+
+2. Calculate the top part (numerator) of the formula
+
+    1.  subtract the mean from each value of x 
+    2.  square each of the resulting values
+    
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+var_function <- function(x){
+  
+  av     <- mean_function(x)
+  numer  <- sapply(x,`-`,av)^2
+  
+  
+  
+  
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\sigma^2 = \frac
+{\sum(x - \bar{x})^\color{red}{2}}
+{n-1}
+$$
+:::
+
+## Variance Function: Process {auto-animate=true}
+
+2. Calculate the top part (numerator) of the formula
+
+    1.  subtract the mean from each value of x 
+    2.  square each of the resulting values
+    3.  sum all of the squared values together
+    
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+var_function <- function(x){
+  
+  av     <- mean_function(x)
+  numer  <- sum(sapply(x,`-`,av)^2) 
+  
+  
+  
+  
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\sigma^2 = \frac
+{\color{red}{\sum}(x - \bar{x})^2}
+{n-1}
+$$
+:::
+
+## Variance Function: Process {auto-animate=true}
+
+3. Calculate the bottom part (denominator) of the formula
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+var_function <- function(x){
+  
+  av     <- mean_function(x)
+  numer  <- sum(sapply(x,`-`,av)^2)
+  denom  <- length(x) - 1
+  
+  
+  
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\sigma^2 = \frac
+{\sum(x - \bar{x})^2}
+{\color{red}{n-1}}
+$$
+:::
+
+## Variance Function: Process {auto-animate=true}
+
+3. Calculate the bottom part (denominator) of the formula
+4. Divide the numerator by the denominator
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+var_function <- function(x){
+  
+  av     <- mean_function(x)
+  numer  <- sum(sapply(x,`-`,av)^2)
+  denom  <- length(x) - 1
+  output <- numer/denom
+
+  
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\sigma^2 = \color{red}{
+\frac
+{\sum (x - \bar{x})^2}
+{n-1}
+}
+$$
+:::
+
+## Variance Function: Output {auto-animate=true}
+
+Return the resulting value from Step 4 in the process
+
+::: {.absolute top="400" left="0" width="700" height="300"}
+```{r, eval=TRUE}
+var_function <- function(x){
+  
+  av     <- mean_function(x)
+  numer  <- sum(sapply(x,`-`,av)^2)
+  denom  <- length(x) - 1
+  output <- numer/denom
+  
+  return(output)
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\color{red}{\sigma^2} = \frac
+{\sum (x - \bar{x})^2}
+{n-1}
+$$
+:::
+
+## Variance Function: Testing
+::: {.fragment}
+Let's use our `test_data` again to see if our function works: 
+:::
+::: {.fragment}
+```{r, eval=TRUE}
+# print the variance that our function calculates
+var_function(test_data)
+```
+:::
+::: {.fragment}
+```{r, eval=TRUE}
+# print the variance that the base R function calculates
+var(test_data)
+
+```
+:::
+:::{.fragment}
+```{r, eval=FALSE}
+# return TRUE if the two variances are equivalent
+var_function(test_data) == var(test_data)
+```
+```{r, eval=TRUE, echo=FALSE}
+# return TRUE if the two variances are equivalent
+round(var_function(test_data),5) == round(var(test_data),5)
+```
+:::
+
+:::{.fragment .absolute bottom=50}
+**The mystery is disappearing before our eyes!!**
+:::
+
+## Step 3: Making a Standard Error (but in a good way)
+
+::: {.incremental}
+- We are now ready to put it all together for our SEM function
+- This is a nice practical end goal as there no SEM in base R
+- A simple equation that neatly applies our `mean` and `var` 
+:::
+
+::: fragment
+$$
+SE = \frac{s}{\sqrt{n}}
+$$
+:::
+::: fragment
+Where $s$ is the standard deviation of the sample 
+(i.e. the square root of the variance)
+:::
+
+## SEM Function: Input {auto-animate=true}
+::: fragment
+A vector of numeric values (`x`)
+:::
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+sem_function <- function(x){
+  
+  
+  
+  
+  
+  
+}
+```
+::: 
+
+::: {.fragment .absolute right=0 bottom=100}
+$$
+SE = \frac{s}{\sqrt{n}}
+$$
+:::
+
+## SEM Function: Process {auto-animate=true}
+
+1. For our numerator, calculate the standard deviation of `x` by taking the square root of our `var_function()`
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+sem_function <- function(x){
+  
+  numer  <- sqrt(var_function(x))
+  
+  
+  
+  
+}
+```
+:::
+
+::: {.absolute right=0 bottom=100}
+$$
+SE = \frac
+{\color{red}{s}}
+{\sqrt{n}}
+$$
+:::
+
+## SEM Function: Process {auto-animate=true}
+
+1. For our numerator, calculate the standard deviation of `x` by taking the square root of our `var_function()`
+2. For our denominator, take the square root of the number of values in `x`
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+sem_function <- function(x){
+  
+  numer  <- sqrt(var_function(x))
+  denom  <- sqrt(length(x))
+  
+  
+  
+}
+```
+:::
+
+::: {.absolute right=0 bottom=100}
+$$
+SE = \frac
+{s}
+{\color{red}{\sqrt{n}}}
+$$
+:::
+
+## SEM Function: Process {auto-animate=true}
+
+1. For our numerator, calculate the standard deviation of `x` by taking the square root of our `var_function()`
+2. For our denominator, take the square root of the number of values in `x`
+
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+sem_function <- function(x){
+  
+  numer  <- sqrt(var_function(x))
+  denom  <- sqrt(length(x))
+  output <- numer/denom
+  
+  
+}
+```
+:::
+
+::: {.absolute right=0 bottom=100}
+$$
+SE = \color{red}{\frac
+{s}
+{\sqrt{n}}
+}
+$$
+:::
+
+## SEM Function: Output {auto-animate=true}
+
+Return the resulting value from this division
+    
+::: {.absolute top="400" left="0" width=700 height="300"}
+```{r}
+sem_function <- function(x){
+  
+  numer  <- sqrt(var_function(x))
+  denom  <- sqrt(length(x))
+  output <- numer/denom
+  
+  return(output)
+}
+```
+::: 
+
+::: {.absolute right=0 bottom=100}
+$$
+\color{red}{SE} = \frac
+{s}
+{\sqrt{n}}
+$$
+:::
+
+::: fragment
+And of course you can start to simplify things e.g. 
+:::
+
+::: fragment
+```{r}
+sem_function_mini <- function(x){
+  sd(x)/sqrt(length(x))
+}
+```
+:::
+
+## Of course many mysteries remain...
+::: incremental
+- Demystification is a philosophy, not a lesson
+- The core idea is **emboldening** and **empowering** learners 
+- Programming has a special capacity to overwhelm:
+
+  - Software and package installation/dependencies
+  - Project & file management
+  - Unintuitive logic & conventions
+  - $\color{red}{\textbf{ERRORS}}$
+  
+:::
+
+# Errors - Help!
+
+## A familiar scenario {auto-animate="true"}
+
+You go to check-in on a student and see the following:
+
+## A familiar scenario {auto-animate="true"}
+
+You go to check-in on a student and see the following:
+
+```{r eval=FALSE}
+# simulate data
+d <- tibble( 
+  "Group" = rep(c("G1", "G2"), each = 10), 
+  "ReactionT" = rnorm(20, 500, 150)) 
+
+head(d, 2) # see first two rows
+```
+
+[Error in tibble(Group = rep(c("G1", "G2"), each = 10), ReactionT = rnorm(20, : could not find function "tibble"]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## A familiar scenario {auto-animate="true"}
+
+We realise that they did not load 'tidyverse', so
+
+```{r eval=TRUE}
+library(tidyverse)
+
+# simulate data
+d <- tibble( 
+  "Group" = rep(c("G1", "G2"), each = 10), 
+  "ReactionT" = rnorm(20, 500, 150)) 
+
+head(d, 2) # see first two rows
+```
+
+## Programming errors {auto-annimate="true"}
+
+## Programming errors {auto-annimate="true"}
+
+-   Student programming errors comes two main types (Becker et al 2019):
+    1.  Language specification errors (comes with an error message)
+    2.  Program specification errors (program runs, but doesn't do as intended)
+
+## Programming errors {auto-annimate="true"}
+
+-   Student programming errors comes two main types (Becker et al 2019):
+    1.  [Language specification errors]{style="color: red"} (comes with an error message)
+    2.  Program specification errors (program runs, but doesn't do as intended)
+-   Both are important when debugging code, but an immediate hindrance is in [language specification errors]{style="color: red"}
+
+## But why focus on errors? {auto-annimate="true"}
+
+::: incremental
+-   Using errors in teaching has some evidence that is increase student programming ability and self-efficacy (Hoffman & Elmi, 2021; Keohler, 2020)
+-   Effectively debugging code can allow students to progress independently
+-   An excellent framing device for fostering students as self-regulated learners (for self-regulated learning, see e.g., Zimmerman, 2002)
+:::
+
+## Errors for non-programmers {auto-annimate="true"}
+
+::: incremental
+-   Students are used to high-stakes assessments (not used to 'move fast and break things'-mentality)
+
+-   [Red is scary!]{style="color: red"}
+
+-   Language is often convoluted and technical
+
+-   We need to actively help create the right relationship with errors
+:::
+
+## Goal {auto-annimate="true"}
+
+::: incremental
+-   First time students engage with errors it should be taught and not by chance
+-   We want the first thought when seeing an error to be:
+    -   "Great, that's information about how I can do this cool thing"
+    -   "Oh no, I've done something wrong - maybe coding is not for me"
+:::
+
+## How can we meaningfully use errors? {auto-annimate="true"}
+
+::: incremental
+-   Make errors an explicit part of your teaching and not something that just happens
+    -   Introduce errors just like you introduce a function
+    -   Error-full live coding
+    -   Fix errors to get code to run
+    -   "My favourite error"
+    -   Write functions with error handling
+:::
+
+## Introduce errors just like you introduce a function {auto-annimate="true"}
+
+```{r echo=FALSE}
+d <- d %>%
+  mutate(Group = as.factor(Group))
+
+```
+
+## Introduce errors just like you introduce a function {auto-annimate="true"}
+
+-   So just as with introducing functions and it's output
+
+```{r eval=TRUE}
+t.test(formula = ReactionT ~ Group, 
+       data = d, paired = FALSE)
+```
+
+## Introduce errors just like you introduce a function {auto-annimate="true"}
+
+-   We also want to spend time on
+
+```{r eval=FALSE}
+t.test(formula = Group ~ ReactionT, 
+       data = d, paired = FALSE)
+```
+
+[Error in t.test.formula(formula = Group \~ ReactionT, data = d, paired = FALSE) : grouping factor must have exactly 2 levels]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Error-full live coding {auto-annimate="true"}
+
+::: incremental
+-   Pre-plan helpful errors for live coding
+-   For instance:
+    -   syntax/spelling errors you can easily fix
+:::
+
+## Error-full live coding {auto-annimate="true"}
+
+-   Pre-plan helpful errors for live coding
+-   For instance:
+    -   syntax/spelling errors you can easily fix
+
+::: {style="position: fixed; bottom: 1em"}
+```{r eval=FALSE}
+librarry(tidyverse)
+```
+
+[Error in librarry(tidyverse) : could not find function "librarry"]{style="color: red; font-size: 60%; font-family: Courier New"}
+:::
+
+## Error-full live coding {auto-annimate="true"}
+
+-   Pre-plan helpful errors for live coding
+-   For instance:
+    -   syntax/spelling errors you can easily fix
+    -   error that requires you to look at the `?help` (documentation)
+
+::: {style="position: fixed; bottom: 1em"}
+```{r eval=FALSE}
+rnorm(mean = 0, sd = 1)
+```
+
+[Error in rnorm(mean = 0, sd = 1) : argument "n" missing, with no default]{style="color: red; font-size: 60%; font-family: Courier New"}
+:::
+
+## Error-full live coding {auto-annimate="true"}
+
+-   Pre-plan helpful errors for live coding
+
+-   For instance:
+
+    -   syntax/spelling errors you can easily fix
+    -   error that requires you to look at the `?help` (documentation)
+    -   error that requires you to google (exact answer)
+
+    ::: incremental
+    -   error that requires you to google (adaption required)
+    :::
+
+## Fix errors to get code to run {auto-annimate="true"}
+
+-   Write code with error and have student fix them:
+
+## Fix errors to get code to run {auto-annimate="true"}
+
+-   Write code with error and have student fix them:
+
+```{r eval=FALSE}
+library(tidyverse)
+
+# simulate data
+d <- tibble( 
+  "Group" = rep(c("G1", "G2"), each = 10), 
+  "ReactionT" = rnorm(20, 500, 150)) %>
+  mutate("Group" = as.factor(Group))
+  
+head(d, 2) # see first two rows
+```
+
+[Error: unexpected input in: " "Group" = rep(c("G1", "G2"), each = 10), "ReactionT" = rnorm(20, 500, 150)) %\>"]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## "My favourite error" {auto-annimate="true"}
+
+::: incremental
+-   But we can only think of so many errors...
+
+-   ... so get help from your students!
+
+-   ***"My favourite error"***-activity:
+
+    -   students submit errors they come across during their coding
+    -   you review before class
+    -   choose a particularly interesting error and go through it in class
+
+-   This can help form foundation for a **community error library**
+:::
+
+## Write functions with error handling {auto-annimate="true"}
+
+-   Error messages help us think about how programming works, and what function calls do
+
+## Write functions with error handling {auto-annimate="true"}
+
+-   Error messages help us think about how programming works, and what function calls do
+
+So when trying the off-the-shelf `mean()`-function:
+
+```{r eval=FALSE}
+test_chr <- c(1,2, "hello")
+
+mean(test_chr)
+```
+
+[Warning: argument is not numeric or logical: returning NA]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+Let's compare to our function from earlier:
+
+```{r eval=FALSE}
+mean_function <- function(x){
+  mean_sum    <- sum(x)
+  mean_n      <- length(x)
+  mean_output <- mean_sum/mean_n
+  
+  return(mean_output)}
+
+test_chr <- c(1,2, "hello")
+
+mean_function(test_chr)
+```
+
+[Error in sum(x) : invalid 'type' (character) of argument]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+Let's write an error message:
+
+```{r eval=TRUE}
+mean_function <- function(x){
+  
+  if(!is.numeric(x)){
+    stop("mean_function must take an array of numbers")}
+  
+  mean_sum    <- sum(x)
+  mean_n      <- length(x)
+  mean_output <- mean_sum/mean_n
+  
+  return(mean_output)}
+```
+
+## Write functions with error handling {auto-annimate="true"}
+
+Now let's test it:
+
+## Write functions with error handling {auto-annimate="true"}
+
+Now let's test it:
+
+```{r eval = FALSE}
+test_num <- c(1,2,3)
+
+mean_function(test_num)
+```
+
+[`[1] 2`]{style="font-size: 60%"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+Now let's test it:
+
+```{r eval = FALSE}
+test_num <- c(1,2,3)
+
+mean_function(test_num)
+```
+
+[`[1] 2`]{style="font-size: 60%"}
+
+```{r eval = FALSE}
+test_chr <- c(1,2,"hello")
+
+mean_function(test_chr)
+```
+
+[Error in mean_function(test_chr) : mean_function must take an array of numbers]{style="color: red; font-size: 60%; font-family: Courier New"}
+
+## Write functions with error handling {auto-annimate="true"}
+
+-   Writing error messages forces students to think about functions as a series of steps each with its own requirements
+-   Demystify why error messsages are there and helps open up the way we think about functions
+
+## Takeaway
+
+::: incremental
+-   Errors will be a part of a student's coding journey, so we need to think about how we help students make the most of them
+-   *Reflection:* What is one way you could incorporate errors in your teaching?
+:::
+
+
+# PsyTeachR
+
+![](images/psyteachr_logo.png)
+
+## Resources
+
+![[psyteachr.github.io](https://psyteachr.github.io/)](images/resources.png)
+
+## Undergraduate Textbooks
+
+::: {layout-ncol=3}
+![[Level 1](https://psyteachr.github.io/data-skills/)](images/hex/data-skills.png)
+
+![[Level 2](https://psyteachr.github.io/analysis/)](images/hex/analysis.png)
+
+![[Level 3](https://psyteachr.github.io/stat-models/)](images/hex/stat-models.png)
+:::
+
+## Postgraduate/CPD Textbooks
+
+::: {layout-ncol=3}
+![[Conversion](https://psyteachr.github.io/quant-fun/)](images/hex/quant-fun.png)
+
+![[MSc](https://psyteachr.github.io/reprores/)](images/hex/reprores.png)
+
+![[Micro-credential](https://psyteachr.github.io/ads/)](images/hex/ads.png)
+:::
+
+## Workshops
+
+::: {layout-ncol=3}
+![[IntroDataViz](https://psyteachr.github.io/introdataviz/)](images/hex/introdataviz.png)
+
+![[ShinyIntro](https://debruine.github.io/shinyintro/)](images/hex/shinyintro.png)
+
+![[Intro to R Packages](https://psyteachr.github.io/intro-r-pkgs/)](images/hex/intro-r-pkgs.png)
+:::
+
+## R Packages
+
+::: {layout-ncol=4}
+![[<smaller>webexercises</smaller>](https://psyteachr.github.io/webexercises/)](images/hex/webexercises.png)
+
+![[faux](https://debruine.github.io/faux/)](images/hex/faux.png)
+
+![[markr](https://psyteachr.github.io/markr/)](images/hex/markr.png)
+
+![[glossary](https://debruine.github.io/glossary/)](images/hex/glossary-pkg.png)
+:::
+
+
+# Thank You!
+
+[psyteachr.github.io/ews24](https://psyteachr.github.io/ews24/)
+
+::: {.people layout-ncol=3}
+![[Sean Westwood](https://mphiliastides.org/en/team/sean-westwood)](images/sean.jpg)
+
+![[Tobias Thejll-Madsen](https://www.gla.ac.uk/pgrs/tobiasthejll-madsen/)](images/tobi.jpg)
+
+![[Lisa DeBruine](https://debruine.github.io/)](images/lisa.jpg)
+:::
+

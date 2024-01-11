@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="ews_files/libs/clipboard/clipboard.min.js"></script>
-<script src="ews_files/libs/quarto-html/tabby.min.js"></script>
-<script src="ews_files/libs/quarto-html/popper.min.js"></script>
-<script src="ews_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="ews_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="ews_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="ews_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="ews_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.433">
 
-  <meta name="author" content="Sean Westwood">
-  <title>EWS</title>
+  <meta name="author" content="Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine">
+  <title>PsyTeachR Teaching case studies from Glasgow</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="ews_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="ews_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -56,50 +56,50 @@
         -khtml-user-select: none; -moz-user-select: none;
         -ms-user-select: none; user-select: none;
         padding: 0 4px; width: 4em;
-        color: #aaaaaa;
       }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
     div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
+      { color: #f8f8f2;  }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
-  <link rel="stylesheet" href="ews_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="ews_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="ews_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="ews_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="ews_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -385,22 +385,55 @@
     }
   </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">EWS</h1>
+  <h1 class="title">PsyTeachR<br><smaller>Teaching case studies from Glasgow</smaller></h1>
+  <p class="subtitle"><a href="https://psyteachr.github.io/ews24/">psyteachr.github.io/ews24</a></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Sean Westwood 
+Sean Westwood, Tobias Thejll-Madsen &amp; Lisa DeBruine 
 </div>
 </div>
 </div>
 
 </section>
+<section id="overview" class="title-slide slide level1 center">
+<h1>Overview</h1>
+<div class="people quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/sean.jpg"></p>
+<figcaption>Demystifying Functions</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/tobi.jpg"></p>
+<figcaption>Errors<br>Help!</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lisa.jpg"></p>
+<figcaption>PsyTeachR Resources</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+
 <section>
 <section id="demystifying-functions" class="title-slide slide level1 center">
 <h1>Demystifying Functions</h1>
@@ -638,8 +671,8 @@ Sean Westwood
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>test_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] -0.09843425  0.97775768  0.73003698 -0.64898110  0.95552335 -0.73081468
- [7]  1.43579766 -0.97202044  1.19860495  1.56583152</code></pre>
+<pre><code> [1]  1.3293398 -0.1874176 -0.9455704  0.8388746  2.1995362 -0.8723718
+ [7] -0.1723302 -0.4131464 -0.4850704  0.5219714</code></pre>
 </div>
 </div>
 </div>
@@ -657,7 +690,7 @@ Sean Westwood
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># print the mean that our function calculates</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="fu">mean_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4413302</code></pre>
+<pre><code>[1] 0.1813815</code></pre>
 </div>
 </div>
 </div>
@@ -666,7 +699,7 @@ Sean Westwood
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># print the mean that the base R function calculates</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a><span class="fu">mean</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4413302</code></pre>
+<pre><code>[1] 0.1813815</code></pre>
 </div>
 </div>
 </div>
@@ -932,7 +965,7 @@ Sean Westwood
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># print the variance that our function calculates</span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="fu">var_function</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9237825</code></pre>
+<pre><code>[1] 1.042024</code></pre>
 </div>
 </div>
 </div>
@@ -941,7 +974,7 @@ Sean Westwood
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># print the variance that the base R function calculates</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="fu">var</span>(test_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9237825</code></pre>
+<pre><code>[1] 1.042024</code></pre>
 </div>
 </div>
 </div>
@@ -1127,27 +1160,554 @@ SE = \color{red}{\frac
 </ul></li>
 </ul>
 </div>
+</section></section>
+<section>
+<section id="errors---help" class="title-slide slide level1 center">
+<h1>Errors - Help!</h1>
+
+</section>
+<section id="a-familiar-scenario" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">A familiar scenario</h2>
+<p>You go to check-in on a student and see the following:</p>
+</section>
+<section id="a-familiar-scenario-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">A familiar scenario</h2>
+<p>You go to check-in on a student and see the following:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb37-1" class="hljs-ln-code"><a href="#cb37-1"></a><span class="co"># simulate data</span></span>
+<span id="cb37-2" class="hljs-ln-code"><a href="#cb37-2"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb37-3" class="hljs-ln-code"><a href="#cb37-3"></a>  <span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"G1"</span>, <span class="st">"G2"</span>), <span class="at">each =</span> <span class="dv">10</span>), </span>
+<span id="cb37-4" class="hljs-ln-code"><a href="#cb37-4"></a>  <span class="st">"ReactionT"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">500</span>, <span class="dv">150</span>)) </span>
+<span id="cb37-5" class="hljs-ln-code"><a href="#cb37-5"></a></span>
+<span id="cb37-6" class="hljs-ln-code"><a href="#cb37-6"></a><span class="fu">head</span>(d, <span class="dv">2</span>) <span class="co"># see first two rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in tibble(Group = rep(c(“G1”, “G2”), each = 10), ReactionT = rnorm(20, : could not find function “tibble”</span></p>
+</section>
+<section id="a-familiar-scenario-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">A familiar scenario</h2>
+<p>We realise that they did not load ‘tidyverse’, so</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb38-1" class="hljs-ln-code"><a href="#cb38-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb38-2" class="hljs-ln-code"><a href="#cb38-2"></a></span>
+<span id="cb38-3" class="hljs-ln-code"><a href="#cb38-3"></a><span class="co"># simulate data</span></span>
+<span id="cb38-4" class="hljs-ln-code"><a href="#cb38-4"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb38-5" class="hljs-ln-code"><a href="#cb38-5"></a>  <span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"G1"</span>, <span class="st">"G2"</span>), <span class="at">each =</span> <span class="dv">10</span>), </span>
+<span id="cb38-6" class="hljs-ln-code"><a href="#cb38-6"></a>  <span class="st">"ReactionT"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">500</span>, <span class="dv">150</span>)) </span>
+<span id="cb38-7" class="hljs-ln-code"><a href="#cb38-7"></a></span>
+<span id="cb38-8" class="hljs-ln-code"><a href="#cb38-8"></a><span class="fu">head</span>(d, <span class="dv">2</span>) <span class="co"># see first two rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  Group ReactionT
+  &lt;chr&gt;     &lt;dbl&gt;
+1 G1         338.
+2 G1         298.</code></pre>
+</div>
+</div>
+</section>
+<section id="programming-errors" class="slide level2" data-auto-annimate="true">
+<h2>Programming errors</h2>
+</section>
+<section id="programming-errors-1" class="slide level2" data-auto-annimate="true">
+<h2>Programming errors</h2>
+<ul>
+<li>Student programming errors comes two main types (Becker et al 2019):
+<ol type="1">
+<li>Language specification errors (comes with an error message)</li>
+<li>Program specification errors (program runs, but doesn’t do as intended)</li>
+</ol></li>
+</ul>
+</section>
+<section id="programming-errors-2" class="slide level2" data-auto-annimate="true">
+<h2>Programming errors</h2>
+<ul>
+<li>Student programming errors comes two main types (Becker et al 2019):
+<ol type="1">
+<li><span style="color: red">Language specification errors</span> (comes with an error message)</li>
+<li>Program specification errors (program runs, but doesn’t do as intended)</li>
+</ol></li>
+<li>Both are important when debugging code, but an immediate hindrance is in <span style="color: red">language specification errors</span></li>
+</ul>
+</section>
+<section id="but-why-focus-on-errors" class="slide level2" data-auto-annimate="true">
+<h2>But why focus on errors?</h2>
+<div>
+<ul>
+<li class="fragment">Using errors in teaching has some evidence that is increase student programming ability and self-efficacy (Hoffman &amp; Elmi, 2021; Keohler, 2020)</li>
+<li class="fragment">Effectively debugging code can allow students to progress independently</li>
+<li class="fragment">An excellent framing device for fostering students as self-regulated learners (for self-regulated learning, see e.g., Zimmerman, 2002)</li>
+</ul>
+</div>
+</section>
+<section id="errors-for-non-programmers" class="slide level2" data-auto-annimate="true">
+<h2>Errors for non-programmers</h2>
+<div>
+<ul>
+<li class="fragment"><p>Students are used to high-stakes assessments (not used to ‘move fast and break things’-mentality)</p></li>
+<li class="fragment"><p><span style="color: red">Red is scary!</span></p></li>
+<li class="fragment"><p>Language is often convoluted and technical</p></li>
+<li class="fragment"><p>We need to actively help create the right relationship with errors</p></li>
+</ul>
+</div>
+</section>
+<section id="goal" class="slide level2" data-auto-annimate="true">
+<h2>Goal</h2>
+<div>
+<ul>
+<li class="fragment">First time students engage with errors it should be taught and not by chance</li>
+<li class="fragment">We want the first thought when seeing an error to be:
+<ul>
+<li class="fragment">“Great, that’s information about how I can do this cool thing”</li>
+<li class="fragment">“Oh no, I’ve done something wrong - maybe coding is not for me”</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="how-can-we-meaningfully-use-errors" class="slide level2" data-auto-annimate="true">
+<h2>How can we meaningfully use errors?</h2>
+<div>
+<ul>
+<li class="fragment">Make errors an explicit part of your teaching and not something that just happens
+<ul>
+<li class="fragment">Introduce errors just like you introduce a function</li>
+<li class="fragment">Error-full live coding</li>
+<li class="fragment">Fix errors to get code to run</li>
+<li class="fragment">“My favourite error”</li>
+<li class="fragment">Write functions with error handling</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="introduce-errors-just-like-you-introduce-a-function" class="slide level2" data-auto-annimate="true">
+<h2>Introduce errors just like you introduce a function</h2>
+</section>
+<section id="introduce-errors-just-like-you-introduce-a-function-1" class="slide level2" data-auto-annimate="true">
+<h2>Introduce errors just like you introduce a function</h2>
+<ul>
+<li>So just as with introducing functions and it’s output</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">t.test</span>(<span class="at">formula =</span> ReactionT <span class="sc">~</span> Group, </span>
+<span id="cb40-2"><a href="#cb40-2"></a>       <span class="at">data =</span> d, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  ReactionT by Group
+t = -1.7074, df = 14.324, p-value = 0.1093
+alternative hypothesis: true difference in means between group G1 and group G2 is not equal to 0
+95 percent confidence interval:
+ -240.36909   27.03854
+sample estimates:
+mean in group G1 mean in group G2 
+        444.5159         551.1812 </code></pre>
+</div>
+</div>
+</section>
+<section id="introduce-errors-just-like-you-introduce-a-function-2" class="slide level2" data-auto-annimate="true">
+<h2>Introduce errors just like you introduce a function</h2>
+<ul>
+<li>We also want to spend time on</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="fu">t.test</span>(<span class="at">formula =</span> Group <span class="sc">~</span> ReactionT, </span>
+<span id="cb42-2"><a href="#cb42-2"></a>       <span class="at">data =</span> d, <span class="at">paired =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in t.test.formula(formula = Group ~ ReactionT, data = d, paired = FALSE) : grouping factor must have exactly 2 levels</span></p>
+</section>
+<section id="error-full-live-coding" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<div>
+<ul>
+<li class="fragment">Pre-plan helpful errors for live coding</li>
+<li class="fragment">For instance:
+<ul>
+<li class="fragment">syntax/spelling errors you can easily fix</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="error-full-live-coding-1" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<ul>
+<li>Pre-plan helpful errors for live coding</li>
+<li>For instance:
+<ul>
+<li>syntax/spelling errors you can easily fix</li>
+</ul></li>
+</ul>
+<div style="position: fixed; bottom: 1em">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">librarry</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in librarry(tidyverse) : could not find function “librarry”</span></p>
+</div>
+</section>
+<section id="error-full-live-coding-2" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<ul>
+<li>Pre-plan helpful errors for live coding</li>
+<li>For instance:
+<ul>
+<li>syntax/spelling errors you can easily fix</li>
+<li>error that requires you to look at the <code>?help</code> (documentation)</li>
+</ul></li>
+</ul>
+<div style="position: fixed; bottom: 1em">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">rnorm</span>(<span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in rnorm(mean = 0, sd = 1) : argument “n” missing, with no default</span></p>
+</div>
+</section>
+<section id="error-full-live-coding-3" class="slide level2" data-auto-annimate="true">
+<h2>Error-full live coding</h2>
+<ul>
+<li><p>Pre-plan helpful errors for live coding</p></li>
+<li><p>For instance:</p>
+<ul>
+<li>syntax/spelling errors you can easily fix</li>
+<li>error that requires you to look at the <code>?help</code> (documentation)</li>
+<li>error that requires you to google (exact answer)</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">error that requires you to google (adaption required)</li>
+</ul>
+</div></li>
+</ul>
+</section>
+<section id="fix-errors-to-get-code-to-run" class="slide level2" data-auto-annimate="true">
+<h2>Fix errors to get code to run</h2>
+<ul>
+<li>Write code with error and have student fix them:</li>
+</ul>
+</section>
+<section id="fix-errors-to-get-code-to-run-1" class="slide level2" data-auto-annimate="true">
+<h2>Fix errors to get code to run</h2>
+<ul>
+<li>Write code with error and have student fix them:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb45-2"><a href="#cb45-2"></a></span>
+<span id="cb45-3"><a href="#cb45-3"></a><span class="co"># simulate data</span></span>
+<span id="cb45-4"><a href="#cb45-4"></a>d <span class="ot">&lt;-</span> <span class="fu">tibble</span>( </span>
+<span id="cb45-5"><a href="#cb45-5"></a>  <span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"G1"</span>, <span class="st">"G2"</span>), <span class="at">each =</span> <span class="dv">10</span>), </span>
+<span id="cb45-6"><a href="#cb45-6"></a>  <span class="st">"ReactionT"</span> <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">500</span>, <span class="dv">150</span>)) %<span class="sc">&gt;</span></span>
+<span id="cb45-7"><a href="#cb45-7"></a>  <span class="fu">mutate</span>(<span class="st">"Group"</span> <span class="ot">=</span> <span class="fu">as.factor</span>(Group))</span>
+<span id="cb45-8"><a href="#cb45-8"></a>  </span>
+<span id="cb45-9"><a href="#cb45-9"></a><span class="fu">head</span>(d, <span class="dv">2</span>) <span class="co"># see first two rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error: unexpected input in: ” “Group” = rep(c(“G1”, “G2”), each = 10), “ReactionT” = rnorm(20, 500, 150)) %&gt;”</span></p>
+</section>
+<section id="my-favourite-error" class="slide level2" data-auto-annimate="true">
+<h2>“My favourite error”</h2>
+<div>
+<ul>
+<li class="fragment"><p>But we can only think of so many errors…</p></li>
+<li class="fragment"><p>… so get help from your students!</p></li>
+<li class="fragment"><p><strong><em>“My favourite error”</em></strong>-activity:</p>
+<ul>
+<li class="fragment">students submit errors they come across during their coding</li>
+<li class="fragment">you review before class</li>
+<li class="fragment">choose a particularly interesting error and go through it in class</li>
+</ul></li>
+<li class="fragment"><p>This can help form foundation for a <strong>community error library</strong></p></li>
+</ul>
+</div>
+</section>
+<section id="write-functions-with-error-handling" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<ul>
+<li>Error messages help us think about how programming works, and what function calls do</li>
+</ul>
+</section>
+<section id="write-functions-with-error-handling-1" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<ul>
+<li>Error messages help us think about how programming works, and what function calls do</li>
+</ul>
+<p>So when trying the off-the-shelf <code>mean()</code>-function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>test_chr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="st">"hello"</span>)</span>
+<span id="cb46-2"><a href="#cb46-2"></a></span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="fu">mean</span>(test_chr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Warning: argument is not numeric or logical: returning NA</span></p>
+</section>
+<section id="write-functions-with-error-handling-2" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Let’s compare to our function from earlier:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  mean_sum    <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb47-3"><a href="#cb47-3"></a>  mean_n      <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb47-4"><a href="#cb47-4"></a>  mean_output <span class="ot">&lt;-</span> mean_sum<span class="sc">/</span>mean_n</span>
+<span id="cb47-5"><a href="#cb47-5"></a>  </span>
+<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">return</span>(mean_output)}</span>
+<span id="cb47-7"><a href="#cb47-7"></a></span>
+<span id="cb47-8"><a href="#cb47-8"></a>test_chr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>, <span class="st">"hello"</span>)</span>
+<span id="cb47-9"><a href="#cb47-9"></a></span>
+<span id="cb47-10"><a href="#cb47-10"></a><span class="fu">mean_function</span>(test_chr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in sum(x) : invalid ‘type’ (character) of argument</span></p>
+</section>
+<section id="write-functions-with-error-handling-3" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Let’s write an error message:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>mean_function <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb48-2"><a href="#cb48-2"></a>  </span>
+<span id="cb48-3"><a href="#cb48-3"></a>  <span class="cf">if</span>(<span class="sc">!</span><span class="fu">is.numeric</span>(x)){</span>
+<span id="cb48-4"><a href="#cb48-4"></a>    <span class="fu">stop</span>(<span class="st">"mean_function must take an array of numbers"</span>)}</span>
+<span id="cb48-5"><a href="#cb48-5"></a>  </span>
+<span id="cb48-6"><a href="#cb48-6"></a>  mean_sum    <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb48-7"><a href="#cb48-7"></a>  mean_n      <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb48-8"><a href="#cb48-8"></a>  mean_output <span class="ot">&lt;-</span> mean_sum<span class="sc">/</span>mean_n</span>
+<span id="cb48-9"><a href="#cb48-9"></a>  </span>
+<span id="cb48-10"><a href="#cb48-10"></a>  <span class="fu">return</span>(mean_output)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-functions-with-error-handling-4" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Now let’s test it:</p>
+</section>
+<section id="write-functions-with-error-handling-5" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Now let’s test it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>test_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb49-2"><a href="#cb49-2"></a></span>
+<span id="cb49-3"><a href="#cb49-3"></a><span class="fu">mean_function</span>(test_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="font-size: 60%"><code>[1] 2</code></span></p>
+</section>
+<section id="write-functions-with-error-handling-6" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<p>Now let’s test it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>test_num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
+<span id="cb50-2"><a href="#cb50-2"></a></span>
+<span id="cb50-3"><a href="#cb50-3"></a><span class="fu">mean_function</span>(test_num)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="font-size: 60%"><code>[1] 2</code></span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>test_chr <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">"hello"</span>)</span>
+<span id="cb51-2"><a href="#cb51-2"></a></span>
+<span id="cb51-3"><a href="#cb51-3"></a><span class="fu">mean_function</span>(test_chr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><span style="color: red; font-size: 60%; font-family: Courier New">Error in mean_function(test_chr) : mean_function must take an array of numbers</span></p>
+</section>
+<section id="write-functions-with-error-handling-7" class="slide level2" data-auto-annimate="true">
+<h2>Write functions with error handling</h2>
+<ul>
+<li>Writing error messages forces students to think about functions as a series of steps each with its own requirements</li>
+<li>Demystify why error messsages are there and helps open up the way we think about functions</li>
+</ul>
+</section>
+<section id="takeaway" class="slide level2">
+<h2>Takeaway</h2>
+<div>
+<ul>
+<li class="fragment">Errors will be a part of a student’s coding journey, so we need to think about how we help students make the most of them</li>
+<li class="fragment"><em>Reflection:</em> What is one way you could incorporate errors in your teaching?</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="psyteachr" class="title-slide slide level1 center">
+<h1>PsyTeachR</h1>
+
+<img data-src="images/psyteachr_logo.png" class="r-stretch"></section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+
+<img data-src="images/resources.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://psyteachr.github.io/">psyteachr.github.io</a></p></section>
+<section id="undergraduate-textbooks" class="slide level2">
+<h2>Undergraduate Textbooks</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/data-skills.png"></p>
+<figcaption><a href="https://psyteachr.github.io/data-skills/">Level 1</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/analysis.png"></p>
+<figcaption><a href="https://psyteachr.github.io/analysis/">Level 2</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/stat-models.png"></p>
+<figcaption><a href="https://psyteachr.github.io/stat-models/">Level 3</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="postgraduatecpd-textbooks" class="slide level2">
+<h2>Postgraduate/CPD Textbooks</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/quant-fun.png"></p>
+<figcaption><a href="https://psyteachr.github.io/quant-fun/">Conversion</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/reprores.png"></p>
+<figcaption><a href="https://psyteachr.github.io/reprores/">MSc</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/ads.png"></p>
+<figcaption><a href="https://psyteachr.github.io/ads/">Micro-credential</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="workshops" class="slide level2">
+<h2>Workshops</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/introdataviz.png"></p>
+<figcaption><a href="https://psyteachr.github.io/introdataviz/">IntroDataViz</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/shinyintro.png"></p>
+<figcaption><a href="https://debruine.github.io/shinyintro/">ShinyIntro</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/intro-r-pkgs.png"></p>
+<figcaption><a href="https://psyteachr.github.io/intro-r-pkgs/">Intro to R Packages</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="r-packages" class="slide level2">
+<h2>R Packages</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/webexercises.png"></p>
+<figcaption><a href="https://psyteachr.github.io/webexercises/"><smaller>webexercises</smaller></a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/faux.png"></p>
+<figcaption><a href="https://debruine.github.io/faux/">faux</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/markr.png"></p>
+<figcaption><a href="https://psyteachr.github.io/markr/">markr</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/hex/glossary-pkg.png"></p>
+<figcaption><a href="https://debruine.github.io/glossary/">glossary</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank You!</h1>
+<p><a href="https://psyteachr.github.io/ews24/">psyteachr.github.io/ews24</a></p>
+<div class="people quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/sean.jpg"></p>
+<figcaption><a href="https://mphiliastides.org/en/team/sean-westwood">Sean Westwood</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/tobi.jpg"></p>
+<figcaption><a href="https://www.gla.ac.uk/pgrs/tobiasthejll-madsen/">Tobias Thejll-Madsen</a></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lisa.jpg"></p>
+<figcaption><a href="https://debruine.github.io/">Lisa DeBruine</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p><img src="images/hex/psyteachr.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="ews_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="ews_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="ews_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="ews_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="ews_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="ews_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="ews_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="ews_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="ews_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="ews_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -1291,7 +1851,7 @@ SE = \color{red}{\frac
         transition: 'none',
 
         // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
+        transitionSpeed: 'fast',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
